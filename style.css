@@ -1,0 +1,208 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* Base Styling */
+body, h1, h2, h3, p, figure, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Front and Back Mullet Styling */
+.front-mullet, .back-mullet {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.left-front, .right-front {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-front {
+    max-width: 375px;
+    margin-right: 20px;
+}
+
+.right-front {
+    max-width: 600px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Typography */
+h2, h3, blockquote {
+    color: #9966CB;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    padding-left: 20px;
+    border-left: 4px solid #9966CB;
+    margin: 20px 0;
+}
+
+/* Skill List & Buttons */
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    font-size: 1rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.button-container a {
+    background-color: #9966CB;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Portfolio Section */
+.portfolio {
+    margin-bottom: 20px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    width: calc(33.333% - 2rem);
+    position: relative;
+    overflow: visible; /* Allows the description to flow outside the bounds */
+    margin-bottom: 2rem; /* Space between rows */
+    padding-top: 2.5rem; /* Space for the title above the image */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-out; /* Smooth transformation for scale */
+}
+
+.project:hover img {
+    transform: scale(1.05); /* Subtle scaling to avoid covering the title */
+    transform-origin: top center; /* Ensures scaling happens downwards */
+}
+
+.project-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.25rem;
+    background-color: rgba(153, 102, 203, 0.8); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+}
+
+.image-description {
+    position: absolute;
+    top: 100%; /* Positioned just below the image */
+    left: 0;
+    right: 0;
+    background-color: rgba(153, 102, 203, 0.8); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease-out; /* Smooth transition for visibility and movement */
+    transform: translateY(10px); /* Initially pushed down slightly */
+    opacity: 0; /* Start fully transparent */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.project:hover .image-description {
+    opacity: 1; /* Fully visible on hover */
+    transform: translateY(0); /* Moves to its natural position */
+}
+
+/* Interview Section */
+.interview {
+    padding: 20px;
+    border: 4px solid #9966CB;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .front-mullet, .back-mullet, .project-container {
+        flex-direction: column;
+    }
+
+    .left-front, .right-front, .project {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .project {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    h3, blockquote {
+        font-size: 1.5rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+}
