@@ -1,6 +1,22 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Roboto+Slab:wght@100..900&display=swap');
 
+/* Theme Variables */
+.student-template {
+    --primary-font: 'Roboto Slab', serif;
+    --secondary-font: 'Amarante', sans-serif;
+    --base-font-size: 1rem;
+    --heading-font-size: 2rem;
+    --subheading-font-size: 1.5rem;
+    --primary-color: #9966CB;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --button-bg-color: #9966CB;
+    --button-text-color: white;
+    --box-shadow-color: rgba(0,0,0,0.1);
+    --border-color: #9966CB;
+}
+
 /* Base Styling */
 body, h1, h2, h3, p, figure, ul, li {
     margin: 0;
@@ -8,9 +24,9 @@ body, h1, h2, h3, p, figure, ul, li {
     box-sizing: border-box;
 }
 body {
-    font-family: 'Roboto Slab', serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -20,7 +36,7 @@ main {
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px var(--box-shadow-color);
 }
 
 /* Front and Back Mullet Styling */
@@ -54,24 +70,24 @@ img {
 
 /* Typography */
 h2, h3, blockquote {
-    color: #9966CB;
+    color: var(--primary-color);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: var(--heading-font-size);
     font-weight: 900;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: var(--subheading-font-size);
     font-weight: 800;
 }
 
 blockquote {
-    font-size: 1rem;
+    font-size: var(--base-font-size);
     font-style: italic;
     padding-left: 20px;
-    border-left: 4px solid #9966CB;
+    border-left: 4px solid var(--border-color);
     margin: 20px 0;
 }
 
@@ -82,7 +98,7 @@ blockquote {
 }
 
 .skills-list li {
-    font-size: 1rem;
+    font-size: var(--base-font-size);
 }
 
 .button-container {
@@ -94,8 +110,8 @@ blockquote {
 }
 
 .button-container a {
-    background-color: #9966CB;
-    color: white;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -116,21 +132,21 @@ blockquote {
 .project {
     width: calc(33.333% - 2rem);
     position: relative;
-    overflow: visible; /* Allows the description to flow outside the bounds */
-    margin-bottom: 2rem; /* Space between rows */
-    padding-top: 2.5rem; /* Space for the title above the image */
+    overflow: visible;
+    margin-bottom: 2rem;
+    padding-top: 2.5rem;
 }
 
 .project img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: transform 0.3s ease-out; /* Smooth transformation for scale */
+    transition: transform 0.3s ease-out;
 }
 
 .project:hover img {
-    transform: scale(1.05); /* Subtle scaling to avoid covering the title */
-    transform-origin: top center; /* Ensures scaling happens downwards */
+    transform: scale(1.05);
+    transform-origin: top center;
 }
 
 .project-title {
@@ -140,7 +156,7 @@ blockquote {
     right: 0;
     text-align: center;
     font-size: 1.25rem;
-    background-color: rgba(153, 102, 203, 0.8); /* Semi-transparent background */
+    background-color: rgba(153, 102, 203, 0.8);
     color: #fff;
     padding: 10px 0;
     border-top-left-radius: 10px;
@@ -150,29 +166,29 @@ blockquote {
 
 .image-description {
     position: absolute;
-    top: 100%; /* Positioned just below the image */
+    top: 100%;
     left: 0;
     right: 0;
-    background-color: rgba(153, 102, 203, 0.8); /* Semi-transparent background */
+    background-color: rgba(153, 102, 203, 0.8);
     color: #fff;
     text-align: center;
     padding: 10px;
-    transition: opacity 0.3s ease, transform 0.3s ease-out; /* Smooth transition for visibility and movement */
-    transform: translateY(10px); /* Initially pushed down slightly */
-    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.3s ease, transform 0.3s ease-out;
+    transform: translateY(10px);
+    opacity: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 .project:hover .image-description {
-    opacity: 1; /* Fully visible on hover */
-    transform: translateY(0); /* Moves to its natural position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Interview Section */
 .interview {
     padding: 20px;
-    border: 4px solid #9966CB;
+    border: 4px solid var(--border-color);
     border-radius: 15px;
     margin-bottom: 20px;
 }
